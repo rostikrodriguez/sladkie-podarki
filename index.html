@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <title>Сладкие подарки</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600;1,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="stage">
+    <div class="app">
+      <img class="frame-art" src="assets/frame.jpg" alt="" aria-hidden="true">
+      <div class="frame-twinkles" aria-hidden="true" id="frame-twinkles"></div>
+
+      <div class="panel">
+        <header class="header">
+          <p class="candy-title" aria-label="Сладкие подарки">
+            <span class="candy-word">Сладкие</span>
+            <span class="candy-word">подарки</span>
+          </p>
+        </header>
+
+        <main class="main">
+          <section class="drum" id="spices-drum" aria-label="Приправы">
+            <div class="drum-head">
+              <p class="drum-label">Приправы</p>
+              <p class="counter" data-counter>1 из 14</p>
+            </div>
+            <div class="reel">
+              <button type="button" class="arrow prev" data-step="-1" aria-label="Предыдущая приправа">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M14.5 5.5 8 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="viewport" data-viewport></div>
+              <button type="button" class="arrow next" data-step="1" aria-label="Следующая приправа">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9.5 5.5 16 12l-6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <button type="button" class="product-name" data-name data-about>Приправа 1</button>
+          </section>
+
+          <div class="garland" aria-hidden="true">
+            <span class="wire"></span>
+            <span class="bulbs">
+              <i class="bulb"></i><i class="bulb"></i><i class="bulb"></i><i class="bulb"></i>
+              <i class="bulb"></i><i class="bulb"></i><i class="bulb"></i><i class="bulb"></i>
+              <i class="bulb"></i><i class="bulb"></i><i class="bulb"></i><i class="bulb"></i>
+              <i class="bulb"></i>
+            </span>
+          </div>
+
+          <section class="drum" id="tinctures-drum" aria-label="Настойки">
+            <div class="drum-head">
+              <p class="drum-label">Настойки</p>
+              <p class="counter" data-counter>1 из 8</p>
+            </div>
+            <div class="reel">
+              <button type="button" class="arrow prev" data-step="-1" aria-label="Предыдущая настойка">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M14.5 5.5 8 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="viewport" data-viewport></div>
+              <button type="button" class="arrow next" data-step="1" aria-label="Следующая настойка">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9.5 5.5 16 12l-6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <button type="button" class="product-name" data-name data-about>Настойка 1</button>
+          </section>
+        </main>
+
+        <footer class="footer">
+          <div class="footer-tools">
+            <button type="button" class="faq-launch" id="faq-open">Вопросы</button>
+          </div>
+          <a class="contact" id="contact">Написать / Заказать</a>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <dialog class="modal" id="product-modal" aria-labelledby="product-title">
+    <div class="sheet">
+      <button type="button" class="icon-close" data-close aria-label="Закрыть">×</button>
+      <img class="sheet-photo" id="product-image" alt="">
+      <h2 id="product-title"></h2>
+      <p class="sheet-text" id="product-text"></p>
+      <button type="button" class="text-close" data-close>Закрыть</button>
+    </div>
+  </dialog>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Фото товара">
+    <button type="button" class="lightbox-close" data-close aria-label="Закрыть">×</button>
+    <img class="lightbox-photo" id="lightbox-image" alt="">
+    <p class="lightbox-caption" id="lightbox-caption"></p>
+  </dialog>
+
+  <dialog class="modal" id="faq-modal" aria-labelledby="faq-title">
+    <div class="sheet sheet-faq">
+      <button type="button" class="icon-close" data-close aria-label="Закрыть">×</button>
+      <h2 id="faq-title">Вопросы</h2>
+      <div class="faq-list" id="faq-list"></div>
+      <button type="button" class="text-close" data-close>Закрыть</button>
+    </div>
+  </dialog>
+
+  <script src="js/data.js?v=17"></script>
+  <script src="js/carousel.js?v=17"></script>
+  <script src="js/app.js?v=17"></script>
+</body>
+</html>
