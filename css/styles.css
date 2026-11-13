@@ -453,27 +453,47 @@ a:focus-visible {
   background: rgba(0, 0, 0, 0.92);
 }
 
+.lightbox-panel {
+  width: min(960px, calc(100vw - 20px));
+  max-height: calc(100dvh - 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: auto;
+  padding: 52px 10px 16px;
+  -webkit-overflow-scrolling: touch;
+}
+
 .lightbox-photo {
-  max-width: min(100vw, 100%);
-  max-height: calc(100dvh - 72px);
-  width: auto;
-  height: auto;
+  display: block;
+  width: 100%;
+  max-height: min(52dvh, 420px);
+  margin: 0 auto;
   object-fit: contain;
-  border-radius: 4px;
+  border-radius: 8px;
+  background: #0a0a0a;
+}
+
+.lightbox-copy {
+  padding: 4px 6px 8px;
 }
 
 .lightbox-caption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: max(14px, env(safe-area-inset-bottom));
-  margin: 0;
-  text-align: center;
+  margin: 0 0 8px;
   font-family: "Cormorant Garamond", Georgia, serif;
   font-style: italic;
-  font-size: 22px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-  pointer-events: none;
+  font-weight: 600;
+  font-size: clamp(24px, 4vh, 32px);
+  line-height: 1.05;
+  text-align: center;
+}
+
+.lightbox-text {
+  margin: 0;
+  color: #e8dfd0;
+  font-size: 15px;
+  line-height: 1.55;
+  white-space: pre-wrap;
 }
 
 .lightbox-close {
@@ -489,6 +509,33 @@ a:focus-visible {
   color: white;
   font-size: 28px;
   line-height: 1;
+}
+
+@media (min-width: 720px) {
+  .lightbox-panel {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 18px;
+    padding: 28px 18px 18px;
+  }
+
+  .lightbox-photo {
+    width: 48%;
+    max-height: calc(100dvh - 56px);
+    flex: none;
+  }
+
+  .lightbox-copy {
+    flex: 1;
+    min-width: 0;
+    overflow: auto;
+    padding: 8px 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .lightbox-caption { text-align: left; }
 }
 
 .sheet {
@@ -543,6 +590,7 @@ a:focus-visible {
   font-size: 15px;
   line-height: 1.55;
   text-align: center;
+  white-space: pre-wrap;
 }
 
 .text-close {

@@ -27,6 +27,7 @@ function openLightbox(item) {
   image.src = item.image;
   image.alt = item.name;
   document.getElementById("lightbox-caption").textContent = item.name;
+  document.getElementById("lightbox-text").textContent = item.description || "";
   openDialog(dialog);
 }
 
@@ -144,7 +145,9 @@ function boot() {
   setupDialog(productModal);
   setupDialog(faqModal);
   setupDialog(lightbox);
-  lightbox.addEventListener("click", () => lightbox.close());
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) lightbox.close();
+  });
   document.getElementById("faq-open").addEventListener("click", () => openDialog(faqModal));
 }
 
