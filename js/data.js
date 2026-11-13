@@ -6,7 +6,7 @@ const SITE = {
   avatar: "assets/santa.svg",
   contact: {
     label: "Написать / Заказать",
-    href: "https://t.me/username",
+    href: "https://t.me/BigRussianRost",
   },
   spices: [
     {
